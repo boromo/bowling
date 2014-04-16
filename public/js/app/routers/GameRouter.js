@@ -19,13 +19,22 @@ define(["jquery", "backbone", "routers/DesktopRouter", "models/GameModel", "view
 			routes: {
 				// When there is no hash on the url, the home method is called
 				"": "index",
-				"start": "onStartGame"
+				"start": "onStartGame",
+				"multiplayer": "onMultiplayerGame",
+				"exit": "onGameExit"
 			},
 			index: function() {
+				// when index show game menu
 				console.log("Hello from Bowling game index");
 
 			},
 			onStartGame: function(){
+				
+			},
+			onMultiplayerGame: function(){
+				
+			},
+			onGameExit: function(){
 				
 			}
 
