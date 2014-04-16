@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Backbone-Require-Boilerplate (BRB)
 ==================================
 > A Backbone.js and Require.js Boilerplate that promotes decoupling your JavaScript into modules, separating business logic from application logic using Collections/Models and Views, reusing your JavaScript between Desktop and Mobile Web versions while using a mobile framework (jQuery Mobile), including non-AMD Compatible Third Party Scripts in your project, optimizing all of your JavaScript (minify, concatenate, etc), and unit testing your JavaScript.
@@ -440,3 +441,9 @@ Licensed under the MIT license.
 
 	
 
+=======
+bowling
+=======
+
+Backbone Bowling game
+>>>>>>> 50b676c6a3cf8f440b81ee8d63fd2f63905c970f
