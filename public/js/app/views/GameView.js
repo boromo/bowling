@@ -24,6 +24,8 @@ define(["jquery", "backbone", "views/View", "models/Model", "text!templates/game
                 // Dynamically updates the UI with the view's template
                 this.$el.html(this.template);
 
+                this.model.startGame();
+
                 // Maintains chainability
                 return this;
 

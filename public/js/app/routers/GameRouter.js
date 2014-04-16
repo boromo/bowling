@@ -11,6 +11,8 @@ define(["jquery", "backbone", "routers/DesktopRouter", "models/GameModel", "view
 			initialize: function() {
 				this.gameModel = new GameModel();
 
+                console.log("Hello from initialize game router");
+
                 this._initViews();
 
 				// Tells Backbone to start watching for hashchange events
@@ -27,20 +29,20 @@ define(["jquery", "backbone", "routers/DesktopRouter", "models/GameModel", "view
 			},
 			index: function() {
 				// when index show game menu
-                this._changeModelsCurrentView(this.menuView);
+                this._changeModelCurrentView(this.menuView);
 			},
 			onStartGame: function(){
                 // start route
-                this._changeModelsCurrentView(this.gameView);
+                this._changeModelCurrentView(this.gameView);
 			},
 			onMultiplayerGame: function(){
-                // start route
-                this._changeModelsCurrentView(this.multiplayerGameView);
+                // multiplayer route
+                this._changeModelCurrentView(this.multiplayerGameView);
 			},
 			onGameExit: function(){
 				
 			},
-            _changeModelsCurrentView: function(newView){
+            _changeModelCurrentView: function(newView){
                 this.gameModel.set("currentView", newView);
             },
             _initViews: function(){

@@ -27,7 +27,7 @@ define(["jquery", "backbone", "views/View", "models/Model", "text!templates/mult
                 // Maintains chainability
                 return this;
 
-            },
+            }
 
         });
 
