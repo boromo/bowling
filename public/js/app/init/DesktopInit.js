@@ -2,12 +2,12 @@
 // --------------
 
 // Includes Desktop Specific JavaScript files here (or inside of your Desktop router)
-require(["jquery", "backbone", "routers/DesktopRouter", "jqueryui", "bootstrap", "backbone.validateAll"],
+require(["jquery", "backbone", "routers/GameRouter", "jqueryui", "bootstrap", "backbone.validateAll"],
 
-  function($, Backbone, DesktopRouter) {
+  function($, Backbone, GameRouter) {
 
-    // Instantiates a new Desktop Router instance
-    new DesktopRouter();
+    // Instantiates a new Game Router instance
+    new GameRouter();
 
   }
 
