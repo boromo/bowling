@@ -8,19 +8,12 @@ define(["jquery", "backbone", "views/View", "models/Model", "text!templates/game
         var GameMenu = View.extend({
 
             // The DOM Element associated with this view
-            el: "#game-view",
-
-            // View constructor
-            initialize: function() {
-
-                // Calls the view's render method
-                this.render();
-
-            },
+            el: "#game-menu",
 
             // View Event Handlers
             events: {
-
+                "click #start-game": "onStartGameClick",
+                "click #start-multiplayer": "onMultiplayerStartGameClick"
             },
 
             // Renders the view's template to the UI
@@ -35,6 +28,13 @@ define(["jquery", "backbone", "views/View", "models/Model", "text!templates/game
                 // Maintains chainability
                 return this;
 
+            },
+
+            onStartGameClick: function(event){
+                location.href = "#start";
+            },
+            onMultiplayerStartGameClick: function(event){
+                location.href = "#multiplayer";
             }
 
         });

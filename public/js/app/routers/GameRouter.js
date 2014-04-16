@@ -1,16 +1,18 @@
 // BowlingGame.js 
 // --------------------------------------
 
-define(["jquery", "backbone", "routers/DesktopRouter", "models/GameModel", "views/GameView"],
-	function($, Backbone, DesktopRouter, GameModel, GameView) {
+define(["jquery", "backbone", "routers/DesktopRouter", "models/GameModel", "views/GameMenu", "views/GameView", "views/MultiplayerGameView"],
+	function($, Backbone, DesktopRouter, GameModel, GameMenu, GameView, MultiplayerGameView) {
 
 		var GameRouter = DesktopRouter.extend({
 			
 			gameModel:null,
-			
+
 			initialize: function() {
 				this.gameModel = new GameModel();
-				var gameView = new GameView({model:this.gameModel});
+
+                this._initViews();
+
 				// Tells Backbone to start watching for hashchange events
 				Backbone.history.start();
 
@@ -25,18 +27,27 @@ define(["jquery", "backbone", "routers/DesktopRouter", "models/GameModel", "view
 			},
 			index: function() {
 				// when index show game menu
-				console.log("Hello from Bowling game index");
-
+                this._changeModelsCurrentView(this.menuView);
 			},
 			onStartGame: function(){
-				
+                // start route
+                this._changeModelsCurrentView(this.gameView);
 			},
 			onMultiplayerGame: function(){
-				
+                // start route
+                this._changeModelsCurrentView(this.multiplayerGameView);
 			},
 			onGameExit: function(){
 				
-			}
+			},
+            _changeModelsCurrentView: function(newView){
+                this.gameModel.set("currentView", newView);
+            },
+            _initViews: function(){
+                this.menuView = new GameMenu({model:this.gameModel});
+                this.gameView = new GameView({model:this.gameModel});
+                this.multiplayerGameView = new MultiplayerGameView({model:this.gameModel});
+            }
 
 		});
 

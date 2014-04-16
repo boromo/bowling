@@ -10,14 +10,6 @@ define(["jquery", "backbone", "views/View", "models/Model", "text!templates/game
             // The DOM Element associated with this view
             el: "#game-view",
 
-            // View constructor
-            initialize: function() {
-
-                // Calls the view's render method
-                this.render();
-
-            },
-
             // View Event Handlers
             events: {
 

@@ -11,10 +11,7 @@ define(["jquery", "backbone", "models/Model", "text!templates/heading.html"],
 
             // View constructor
             initialize: function() {
-
-                // Calls the view's render method
-                this.render();
-
+                this.listenTo(this.model, "change:currentView", this._onCurrentViewChangeHandler);
             },
 
             // View Event Handlers
@@ -34,6 +31,14 @@ define(["jquery", "backbone", "models/Model", "text!templates/heading.html"],
                 // Maintains chainability
                 return this;
 
+            },
+            _onCurrentViewChangeHandler: function(currentView){
+                console.log("HEllo from on current view changed");
+                if(this === this.model.get("currentView")){
+                    this.render();
+                }else{
+                    this.$el.html("");
+                }
             }
 
         });
