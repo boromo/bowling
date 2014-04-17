@@ -12,7 +12,9 @@ define(["jquery", "backbone", "models/Model", "collections/Frames"],
             initialize: function(){
                 // create frames collection
                 this.frames = new Frames();
-
+		
+		// call nextFrame to create first frame
+		this.nextFrame();
             },
 
             // Default values for all of the Model attributes
@@ -23,7 +25,23 @@ define(["jquery", "backbone", "models/Model", "collections/Frames"],
             // Gets called automatically by Backbone when the set and/or save methods are called (Add your own logic)
             validate: function(attrs) {
 
-            }
+            },
+	    
+	    /**
+	     * And I roll, and I roll, and I ....
+	     * @param {float} precision measured in percentage
+	     * @returns {undefined}
+	     */
+	    rollTheBall: function(precision){
+		    
+	    },
+	    /**
+	     * Creates new game Frame
+	     */
+	    nextFrame: function(){
+		    var frame = new Frame();
+		    this.frames.ad
+	    }
 
         });
 
