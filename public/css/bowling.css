@@ -1,0 +1,74 @@
+.score-table{
+    width: 100%;
+}
+.score-table-row{
+    width: 100%;
+}
+.score-table div.cell{
+    float: left;
+    font-size: 11px;
+    text-align: center;
+    background-color: #F9F9F9;
+    list-style: none;
+    width: 10%;
+    line-height: 30px;
+}
+
+.score-table div.cell span {
+    display: block;
+    text-align: center;
+    word-wrap: break-word;
+    border: 1px solid #FFF;
+}
+
+.score-table-row.frame-numbers .cell{
+    font-size: 13px;
+    font-weight: bold;
+}
+.score-table-row.frame-numbers .cell span{
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.score-table-row.frame-numbers .cell{
+    background: #add8e6;
+}
+
+.score-table-row.frame-balls .cell span.half-width{
+    width: 50%;
+    float: left;
+    height: 32px;
+}
+.score-table-row.frame-balls .cell span.third-width{
+    width: 33%;
+    float: left;
+}
+
+.score-table-row.frame-score .cell span{
+    height: 32px;
+}
+
+.score-table div.cell.strike span:nth-child(1){
+    background: #ff0000;
+    text-indent: -9000px;
+}
+
+.score-table div.cell.spare span:nth-child(2){
+    background: linear-gradient(to left top, #F00 50%, rgba(0, 0, 0, 0) 50%);
+    text-indent: -9000px;
+}
+
+.score-table .player.active{
+    color: #f00;
+}
+.precisionBar{
+    background-color: #5CB85C; height: 32px; float: left; position: relative;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
+#bowlingLane .input-group .progress.form-control{
+    padding: 0;
+    margin: 0;
+}
