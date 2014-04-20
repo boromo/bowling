@@ -141,7 +141,7 @@ define(["jquery", "backbone", "views/View", "models/Model", "views/BowlingLane",
                 this.template = _.template(gameOverModal, {winner: winner});
                 this.$el.find(this.gameOverModalEl).html(this.template);
 
-                $('#gameOverModalEl').modal();
+                $('#gameOverModal').modal();
             },
 
             _onBackToMenu: function(event){
