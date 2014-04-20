@@ -29,7 +29,10 @@ require.config({
 
       "text": "../libs/plugins/text",
 
-      "jasminejquery": "../libs/plugins/jasmine-jquery"
+      "jasminejquery": "../libs/plugins/jasmine-jquery",
+
+      // TweenMax
+      "TweenMax" : "../libs/gsap/TweenMax.min"
 
   },
 

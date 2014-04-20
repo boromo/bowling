@@ -3,7 +3,7 @@
 
 define(["jquery", "backbone", "views/View", "models/Model", "text!templates/gameMenu.html"],
 
-    function($, Backbone, View, Model, template){
+    function ($, Backbone, View, Model, template) {
 
         var GameMenu = View.extend({
 
@@ -17,7 +17,7 @@ define(["jquery", "backbone", "views/View", "models/Model", "text!templates/game
             },
 
             // Renders the view's template to the UI
-            render: function() {
+            render: function () {
 
                 // Setting the view's template property using the Underscore template method
                 this.template = _.template(template, {});
@@ -30,10 +30,10 @@ define(["jquery", "backbone", "views/View", "models/Model", "text!templates/game
 
             },
 
-            onStartGameClick: function(event){
+            onStartGameClick: function (event) {
                 location.href = "#start";
             },
-            onMultiplayerStartGameClick: function(event){
+            onMultiplayerStartGameClick: function (event) {
                 location.href = "#multiplayer";
             }
 

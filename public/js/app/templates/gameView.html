@@ -1,11 +1,31 @@
 <div class="container">
 
-    <div class="jumbotron">
-        <h1>Game View</h1>
+    <div class="">
+        <h1>Bowling game
+        <button id="back-to-menu-btn" class="btn btn-default pull-right" type="button">Back to menu</button>
+        </h1>
         <hr>
-        <p>
-
-        </p>
+        <div id="bowlingLane"></div>
+        <div id="rollTheBallControls">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="input-group">
+                        <input id="pins" name="pins" type="text" class="form-control"/>
+                          <span class="input-group-btn">
+                            <button id="input-pins-btn" class="btn btn-primary" type="button">Pins from input</button>
+                          </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gameOverControls">
+            <p>
+                <button id="back-btn" class="btn btn-lg btn-def">Back to menu</button>
+                <button id="restart-btn" class="btn btn-lg btn-def restart-btn">Restart</button>
+            </p>
+        </div>
     </div>
-
+    <div id="players"></div>
+    <!-- Modal -->
+    <div id="modal"></div>
 </div>

@@ -33,7 +33,7 @@ define(["jquery", "backbone", "models/Model", "text!templates/heading.html"],
 
             },
             _onCurrentViewChangeHandler: function(currentView){
-                console.log("HEllo from on current view changed");
+
                 if(this === this.model.get("currentView")){
                     this.render();
                 }else{

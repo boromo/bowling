@@ -1,0 +1,63 @@
+<hr>
+<% _.each(players, function(player) { %>
+<div class="container">
+    <div class="score-table row">
+        <div><h4 class="player <%= player.activeClass %>"><%= player.name %> : <%= player.score %></h4></div>
+        <div class="score-table-row frame-numbers">
+            <% for(var i = 1; i <= 10; i++){ %>
+            <div class="cell"><span><%=i%></span></div>
+            <% } %>
+        </div>
+        <div class="score-table-row frame-balls">
+            <%
+                var cellClass = "", bonusBall = false;
+
+                for(var i = 0; i < 10; i++){
+
+                    if(player.frames[i] !== undefined && player.frames[i].hasStrike){
+                        cellClass="strike"
+                    }else if(player.frames[i] !== undefined && player.frames[i].hasSpare){
+                        cellClass="spare"
+                    }else{
+                        cellClass=""
+                    }
+
+                    if(player.frames[i] !== undefined && player.frames[i].hasBonus){
+                        bonusBall = true;
+                    }
+
+            %>
+            <div class="cell <%=cellClass%>">
+                <% var balls=2, cl="half-width"; if(bonusBall){ balls=3;cl="third-width" } %>
+                <% for(j = 0; j < balls; j++){ %>
+                <% if(player.frames[i] !== undefined && (!player.frames[i].hasStrike || !player.frames[0].hasSpare
+                ) && player.frames[i].balls[j] !== undefined){ %>
+                    <span class="<%=cl%>"><%= player.frames[i].balls[j].numOfPins %></span>
+                <% }else{%>
+                    <span class="<%=cl%>"></span>
+                <% } %>
+                <% } %>
+            </div>
+            <% } %>
+        </div>
+        <div class="score-table-row frame-score">
+            <%
+                var score = "";
+                for(var i = 0; i < 10; i++){
+                    if(player.frames[i] !== undefined){
+                    }
+                    if(player.frames[i] !== undefined && player.frames[i].score !== 0){
+                        score = player.frames[i].score;
+                    }else{
+                        score = "";
+                    }
+            %>
+            <div class="cell">
+                <span><%= score %></span>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+        <hr>
+<% }); %>

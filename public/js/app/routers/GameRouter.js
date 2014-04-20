@@ -11,8 +11,6 @@ define(["jquery", "backbone", "routers/DesktopRouter", "models/GameModel", "view
 			initialize: function() {
 				this.gameModel = new GameModel();
 
-                console.log("Hello from initialize game router");
-
                 this._initViews();
 
 				// Tells Backbone to start watching for hashchange events
